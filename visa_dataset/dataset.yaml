@@ -1,0 +1,33 @@
+# visa intent
+---
+type: intent
+name: visa
+slots:
+  - name: origincountry
+    entity: snips/country
+  - name: visacitizen
+    entity: citizen
+  - name: visatype
+    entity: visatype
+utterances:
+  - Turn on the lights in the [room](kitchen)
+  - give me some light in the [room](bathroom) please
+  - Can you light up the [room](living room) ?
+  - switch the [room](bedroom)'s lights on please
+# room entity
+---
+type: entity
+name: citizen
+automatically_extensible: yes
+values:
+  - [US, USA, United States]
+  - [UK, United Kindom, GB, British]
+  - [Jamaican, Jamaica, JA]
+---
+type: entity
+name: visatype
+automatically_extensible: yes
+values:
+  - bedroom
+  - [living room, main room, lounge]
+  - [garden, yard, backyard]
