@@ -6,20 +6,32 @@ slots:
   - name: origincountry
     entity: snips/country
   - name: visacitizen
-    entity: citizen
+    entity: nationality
   - name: visatype
     entity: visatype
+  - name: verb
+    entity: verb
+  - name: relative
+    entity: relative
 utterances:
-  - Turn on the lights in the [room](kitchen)
-  - give me some light in the [room](bathroom) please
-  - Can you light up the [room](living room) ?
-  - switch the [room](bedroom)'s lights on please
+  - I am [verb] the required £18,600 to [verb] my [relative] who is currently in [country]
+  - I am intending to [verb] my [visacitizen] [relative]
+  - Would it be better to [verb] him in the [country] or in [country], as I will need to do the [visatype] visa in the future
+  - I am a [country] citizen and i would like to [verb] my [visacitizen] [relative] on a [visatype] visa
+  - My [relative] is from [country] and I am from [country]
+  - I am supposed to [verb] for [visatype] next couple of months
+  - My question is regarding [visatype] visa
+  - I am a [visacitizen] citizen my [relative] is a [visacitizen] citizen
+  - If you come to the [country] with a [visacitizen] passport
+  - Can anyone guide me where he should try and procedure to [verb] for visa
+  - What documents do I need for [visatype] visa
 # room entity
 ---
 type: entity
-name: citizen
+name: nationality
 automatically_extensible: yes
 values:
+  - [South African]
   - [US, USA, United States]
   - [UK, United Kindom, GB, British]
   - [Jamaican, Jamaica, JA]
@@ -28,6 +40,26 @@ type: entity
 name: visatype
 automatically_extensible: yes
 values:
-  - bedroom
-  - [living room, main room, lounge]
-  - [garden, yard, backyard]
+  - [sponser]
+  - [spouse]
+  - [IRL]
+  - [student]
+  - [schenghen]
+  - [visit]
+---
+type: entity
+name: verb
+automatically_extensible: yes
+values:
+  - [marry]
+  - [sponsor]
+  - [apply]
+  - [earning]
+---
+type: entity
+name: relative
+automatically_extensible: yes
+values:
+  - [husband]
+  - [partner]
+  - [boyfriend]
